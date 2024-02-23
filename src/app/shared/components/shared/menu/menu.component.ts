@@ -35,11 +35,11 @@ export class MenuComponent {
       {
         label: 'Mi Billetera',
         items: [
-          {
+/*           {
             label: 'Ir a Billetera',
             icon: 'pi pi-wallet',
             url: 'http://angular.io',
-          },
+          }, */
           {
             label: 'Uso de Billetera',
             icon: 'pi pi-wallet',
@@ -63,22 +63,23 @@ export class MenuComponent {
             },
           },
           {
-            label: 'Recibidas',
-            icon: 'pi pi-download',
+            label: 'Depositos',
+            icon: 'pi pi-money-bill',
             command: () => {
               //  this.delete();
             },
           },
           {
-            label: 'Depositos',
-            icon: 'pi pi-cloud-upload',
+            label: 'Recibidas',
+            icon: 'pi pi-arrow-left',
             command: () => {
               //  this.delete();
             },
           },
+
           {
             label: 'Retiros',
-            icon: 'pi pi-cloud-download',
+            icon: 'pi pi-arrow-right',
             command: () => {
               //this.delete();
             },
