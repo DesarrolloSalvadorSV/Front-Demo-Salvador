@@ -14,7 +14,7 @@ body {
 }
 
 .wrapper .sidebar {
-  background: linear-gradient(37deg, rgba(0, 55, 89, 1) 9%, rgba(194, 23, 36, 1) 92%);
+  background: #e6e6e6;;
   position: fixed;
   top: 0;
   left: 0;
@@ -38,7 +38,7 @@ body {
 }
 
 .wrapper .sidebar .profile h3 {
-  color: #ffffff;
+  color: #8b0101;
   margin: 10px 0 5px;
 }
 

@@ -236,3 +236,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
   background: #125386;
   border: 1px solid #125386;
 }
+
+.p-menu {
+  padding: 0.25rem 0;
+  background: rgb(239 239 239 / 99%);
+  color: #c0c2c7;
+  border-radius: 3px;
+  width: 14rem;
+}
