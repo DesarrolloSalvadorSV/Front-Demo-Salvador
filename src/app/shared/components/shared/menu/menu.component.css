@@ -14,11 +14,13 @@ body {
 }
 
 .wrapper .sidebar {
-  background: #e6e6e6;;
+  /* background: #C21724 ; */
+  /* background: linear-gradient(37deg, rgba(0,55,89,1) 9%, rgba(194,23,36,1) 30%); */
+  background: rgba(0,55,89,1) 50%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 225px;
+  width: 220px;
   height: 100%;
   padding: 20px 0;
   transition: all 0.5s ease;
@@ -38,7 +40,7 @@ body {
 }
 
 .wrapper .sidebar .profile h3 {
-  color: #8b0101;
+  color: #ffffff;
   margin: 10px 0 5px;
 }
 

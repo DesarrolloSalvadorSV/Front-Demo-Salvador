@@ -239,8 +239,46 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 
 .p-menu {
   padding: 0.25rem 0;
-  background: rgb(239 239 239 / 99%);
-  color: #c0c2c7;
+  background:  rgba(0,55,89,1);
+  /* background: #8a2033; */
+  color: transparent;
   border-radius: 3px;
-  width: 14rem;
+  width: 13.2rem;
+}
+
+/* Estilo para la cabecera de cada submenu*/
+.p-menu .p-submenu-header {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  /* background: #003759; */
+   background: #8a2033;
+  font-weight: 600;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  font-size: 19px;
+}
+
+/* Estilo de color para los texto de cada item del menu */
+.p-menu .p-menuitem-link .p-menuitem-text {
+  color: #fdfdfd;
+}
+
+/* Estilo para barra del scroll*/
+.p-scrollpanel .p-scrollpanel-bar {
+  background: #C21724;
+  border: none;
+}
+
+/*clase que quita los bordes del div dentro del scroll*/
+.p-scrollpanel div {
+  /* background: #8a2033; */
+  /* background: linear-gradient(37deg, rgba(0,55,89,1) 9%, rgba(194,23,36,1) 40%); */
+  border: 0 none;
+}
+
+/* Estilos para iconos en el menu */
+.p-menu .p-menuitem-link .p-menuitem-icon {
+  color: #ffffff;
+  margin-right: 0.5rem;
 }

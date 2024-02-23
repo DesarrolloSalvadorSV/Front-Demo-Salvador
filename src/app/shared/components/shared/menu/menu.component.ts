@@ -23,7 +23,7 @@ export class MenuComponent {
   ngOnInit() {
     this.items = [
       {
-        label: '',
+        label: 'Explorar',
         items: [
           {
             label: 'Inicio',
@@ -53,7 +53,7 @@ export class MenuComponent {
         ],
       },
       {
-        label: 'Mis Transacciones',
+        label: 'Mi Historial',
         items: [
           {
             label: 'Enviadas',
