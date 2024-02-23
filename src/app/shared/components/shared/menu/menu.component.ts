@@ -9,14 +9,14 @@ import { MenuItem } from 'primeng/api';
 export class MenuComponent {
   public isClassEnabled = false;
   showNotifications = false;
-  items : MenuItem[];
+  items: MenuItem[];
   displaySidebar = false;
   menuStyles = {
     'backgroundColor': 'none',
     'color': 'white'
   };
 
-  constructor(){
+  constructor() {
 
   }
 
@@ -27,7 +27,7 @@ export class MenuComponent {
         items: [
           {
             label: 'Inicio',
-            icon: 'pi pi-external-link',
+            icon: 'pi pi-home',
             url: 'http://angular.io',
           },
         ],
@@ -37,7 +37,17 @@ export class MenuComponent {
         items: [
           {
             label: 'Ir a Billetera',
-            icon: 'pi pi-external-link',
+            icon: 'pi pi-wallet',
+            url: 'http://angular.io',
+          },
+          {
+            label: 'Uso de Billetera',
+            icon: 'pi pi-wallet',
+            url: 'http://angular.io',
+          },
+          {
+            label: 'Novedades',
+            icon: 'pi pi-megaphone',
             url: 'http://angular.io',
           },
         ],
@@ -47,28 +57,28 @@ export class MenuComponent {
         items: [
           {
             label: 'Enviadas',
-            icon: 'pi pi-refresh',
+            icon: 'pi pi-send',
             command: () => {
-             // this.update();
+              // this.update();
             },
           },
           {
             label: 'Recibidas',
-            icon: 'pi pi-times',
+            icon: 'pi pi-download',
             command: () => {
-            //  this.delete();
+              //  this.delete();
             },
           },
           {
             label: 'Depositos',
-            icon: 'pi pi-times',
+            icon: 'pi pi-cloud-upload',
             command: () => {
-            //  this.delete();
+              //  this.delete();
             },
           },
           {
             label: 'Retiros',
-            icon: 'pi pi-times',
+            icon: 'pi pi-cloud-download',
             command: () => {
               //this.delete();
             },
@@ -79,33 +89,28 @@ export class MenuComponent {
         label: 'Mi Cuenta',
         items: [
           {
-            label: 'Verificar cuenta',
-            icon: 'pi pi-external-link',
+            label: 'Verificar cuenta ',
+            icon: 'pi pi-check ',
             url: 'http://angular.io',
           },
-        ],
-      },
-      {
-        label: 'Mi Sesion',
-        items: [
           {
-            label: 'Ir a pagina web',
-            icon: 'pi pi-external-link',
+            label: 'Centro de ayuda',
+            icon: 'pi pi-question',
             url: 'http://angular.io',
           },
           {
             label: 'Salir',
-            icon: 'pi pi-external-link',
+            icon: 'pi pi-sign-out',
             url: 'http://angular.io',
           },
         ],
-      },
+      }
     ];
 
-}
+  }
 
 
-  efectos(){
+  efectos() {
     this.isClassEnabled = !this.isClassEnabled;
-}
+  }
 }
