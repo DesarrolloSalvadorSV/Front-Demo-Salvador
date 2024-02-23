@@ -34,13 +34,12 @@ body {
 .wrapper .sidebar .profile img {
   display: block;
   width: 120px;
-  height: 100px;
+  height: 80px;
   margin: 1px auto;
 }
 
-.wrapper .sidebar .profile h2 {
+.wrapper .sidebar .profile h3 {
   color: #015b93;
-  letter-spacing: 1px;
   line-height: 1em;
   margin: 10px 0 5px;
 }

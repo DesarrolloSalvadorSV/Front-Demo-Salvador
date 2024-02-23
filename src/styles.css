@@ -271,7 +271,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 
 /*clase que quita los bordes del div dentro del scroll*/
 .p-scrollpanel div {
-  /* background: rgb(253, 241, 241); */
   background: #ffffff;
   border: 0 none;
 }
