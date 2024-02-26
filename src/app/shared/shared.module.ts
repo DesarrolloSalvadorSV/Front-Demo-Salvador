@@ -55,6 +55,7 @@ import { PasswordModule } from 'primeng/password';
 import { DetailWithdrawalsComponent } from './components/dashboard/detail-withdrawals/detail-withdrawals.component';
 import { TransactionsReceivedComponent } from './components/dashboard/transactions-received/transactions-received.component';
 import { TransactionsSentComponent } from './components/dashboard/transactions-sent/transactions-sent.component';
+import { InicioComponent } from './components/dashboard/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { TransactionsSentComponent } from './components/dashboard/transactions-s
     DetaildepositoComponent,
     DetailWithdrawalsComponent,
     TransactionsReceivedComponent,
-    TransactionsSentComponent
+    TransactionsSentComponent,
+    InicioComponent
   ],
   imports: [
     CommonModule,

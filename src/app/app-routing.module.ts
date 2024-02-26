@@ -10,6 +10,8 @@ import { VerificationComponent } from './shared/components/verification/verifica
 import { DetailWithdrawalsComponent } from './shared/components/dashboard/detail-withdrawals/detail-withdrawals.component';
 import { TransactionsReceivedComponent } from './shared/components/dashboard/transactions-received/transactions-received.component';
 import { TransactionsSentComponent } from './shared/components/dashboard/transactions-sent/transactions-sent.component';
+import { InicioComponent } from './shared/components/dashboard/inicio/inicio.component';
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -29,7 +31,7 @@ const routes: Routes = [
     ]
   },
 
-  { path: 'dashboard', component: DashboardComponent,
+  { path: 'sv', component: DashboardComponent,
    children: [
      {
       path: 'detalle-deposito',
@@ -49,6 +51,10 @@ const routes: Routes = [
      {
       path: 'transaciones-enviadas',
       component: TransactionsSentComponent
+     },
+     {
+      path: 'inicio',
+      component: InicioComponent
      },
 
     ]
