@@ -280,3 +280,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
   color: #C21724;
   margin-right: 0.5rem;
 }
+
+.p-panel-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.p-panel .p-panel-header .p-panel-title {
+  font-weight: 900;
+}
+
+.p-panel .p-panel-header {
+  border: 1px solid #dee2e6;
+  padding: 1rem;
+  background: #f8f9fa;
+  color: #08598b;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}

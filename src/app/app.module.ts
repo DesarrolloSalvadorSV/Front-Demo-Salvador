@@ -44,7 +44,7 @@ import { TableModule } from 'primeng/table';
 import { DepositosMockService } from './services/DepositosMock.service';
 import { TagModule } from 'primeng/tag';
 import { PasswordModule } from 'primeng/password';
-
+import { PanelModule } from 'primeng/panel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,7 +87,8 @@ import { PasswordModule } from 'primeng/password';
     PanelMenuModule,
     TableModule,
     TagModule,
-    PasswordModule
+    PasswordModule,
+    PanelModule
    // ...PRIMENG_MODULES
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

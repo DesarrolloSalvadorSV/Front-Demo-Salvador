@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class InicioComponent {
 
+  nameUser =  localStorage.getItem('name');
+  constructor() {
+
+   }
+
 }

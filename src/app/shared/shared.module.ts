@@ -56,6 +56,7 @@ import { DetailWithdrawalsComponent } from './components/dashboard/detail-withdr
 import { TransactionsReceivedComponent } from './components/dashboard/transactions-received/transactions-received.component';
 import { TransactionsSentComponent } from './components/dashboard/transactions-sent/transactions-sent.component';
 import { InicioComponent } from './components/dashboard/inicio/inicio.component';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -109,7 +110,8 @@ import { InicioComponent } from './components/dashboard/inicio/inicio.component'
     PanelMenuModule,
     TableModule,
     TagModule,
-    PasswordModule
+    PasswordModule,
+    PanelModule
   ],
   exports: [
     FormRegisterComponent,
