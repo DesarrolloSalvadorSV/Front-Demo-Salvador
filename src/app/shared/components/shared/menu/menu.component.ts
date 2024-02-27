@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -16,9 +17,11 @@ export class MenuComponent {
     'color': 'white'
   };
 
-  constructor() {
+  constructor(private router:Router) {
 
   }
+
+
 
   ngOnInit() {
     this.items = [
@@ -28,7 +31,7 @@ export class MenuComponent {
           {
             label: 'Inicio',
             icon: 'pi pi-home',
-            url: 'http://angular.io',
+            routerLink: this.navegacionRutas(),
           },
         ],
       },
@@ -109,7 +112,9 @@ export class MenuComponent {
     ];
 
   }
-
+  navegacionRutas(){
+    this.router.navigate(['/transaciones-recibidas']);
+  }
 
   efectos() {
     this.isClassEnabled = !this.isClassEnabled;

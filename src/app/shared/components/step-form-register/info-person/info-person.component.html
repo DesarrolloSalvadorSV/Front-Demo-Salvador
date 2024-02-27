@@ -44,13 +44,13 @@
         <label class="p-label">Fecha de Nacimiento</label>
         <div class="p-fluid">
           <p-calendar formControlName="birtDate" dateFormat="yy/mm/dd" [maxDate]="maxDate" [showIcon]="true"
-          [ngClass]="{ 'invalid-input': formRegisterPersonal.get('birtDate')?.invalid && formRegisterPersonal.get('birtDate')?.touched }">
+            [ngClass]="{ 'invalid-input': formRegisterPersonal.get('birtDate')?.invalid && formRegisterPersonal.get('birtDate')?.touched }">
           </p-calendar>
           <div
-          *ngIf="formRegisterPersonal.get('birtDate')?.invalid && (formRegisterPersonal.get('birtDate')?.dirty || formRegisterPersonal.get('birtDate')?.touched)">
-          <span *ngIf="formRegisterPersonal.get('birtDate')?.errors?.['required']">La fecha de nacimiento es
-            obligatoria.</span>
-        </div>
+            *ngIf="formRegisterPersonal.get('birtDate')?.invalid && (formRegisterPersonal.get('birtDate')?.dirty || formRegisterPersonal.get('birtDate')?.touched)">
+            <span *ngIf="formRegisterPersonal.get('birtDate')?.errors?.['required']">La fecha de nacimiento es
+              obligatoria.</span>
+          </div>
         </div>
 
       </div>
@@ -113,15 +113,15 @@
           </ng-template>
         </p-dropdown>
         <div
-            *ngIf="formRegisterPersonal.get('codeCountry')?.invalid && (formRegisterPersonal.get('codeCountry')?.dirty || formRegisterPersonal.get('codeCountry')?.touched)">
-            <span *ngIf="formRegisterPersonal.get('codeCountry')?.errors?.['required']">El pais es obligatorio.</span>
-          </div>
+          *ngIf="formRegisterPersonal.get('codeCountry')?.invalid && (formRegisterPersonal.get('codeCountry')?.dirty || formRegisterPersonal.get('codeCountry')?.touched)">
+          <span *ngIf="formRegisterPersonal.get('codeCountry')?.errors?.['required']">El pais es obligatorio.</span>
+        </div>
       </div>
 
       <div class="col-12 md:col-6 lg:col-4">
         <div class="inputbox">
           <input type="text" formControlName="city" placeholder="Escribe tu ciudad de residencia" id="city"
-          [ngClass]="{ 'invalid-input': formRegisterPersonal.get('city')?.invalid && formRegisterPersonal.get('city')?.touched }">
+            [ngClass]="{ 'invalid-input': formRegisterPersonal.get('city')?.invalid && formRegisterPersonal.get('city')?.touched }">
           <label>Ciudad</label>
           <div
             *ngIf="formRegisterPersonal.get('city')?.invalid && (formRegisterPersonal.get('city')?.dirty || formRegisterPersonal.get('city')?.touched)">
@@ -152,9 +152,10 @@
           emptyFilterMessage="Sin resultados">
         </p-dropdown>
         <div
-            *ngIf="formRegisterPersonal.get('codeMoney')?.invalid && (formRegisterPersonal.get('codeMoney')?.dirty || formRegisterPersonal.get('codeMoney')?.touched)">
-            <span *ngIf="formRegisterPersonal.get('codeMoney')?.errors?.['required']">El tipo de moneda es obligatoria.</span>
-          </div>
+          *ngIf="formRegisterPersonal.get('codeMoney')?.invalid && (formRegisterPersonal.get('codeMoney')?.dirty || formRegisterPersonal.get('codeMoney')?.touched)">
+          <span *ngIf="formRegisterPersonal.get('codeMoney')?.errors?.['required']">El tipo de moneda es
+            obligatoria.</span>
+        </div>
       </div>
 
       <!-- aca va codico dropdowm -->
@@ -177,9 +178,9 @@
           </ng-template>
         </p-dropdown>
         <div
-            *ngIf="formRegisterPersonal.get('codePhone')?.invalid && (formRegisterPersonal.get('codePhone')?.dirty || formRegisterPersonal.get('codePhone')?.touched)">
-            <span *ngIf="formRegisterPersonal.get('codePhone')?.errors?.['required']">El indicativo es obligatorio.</span>
-          </div>
+          *ngIf="formRegisterPersonal.get('codePhone')?.invalid && (formRegisterPersonal.get('codePhone')?.dirty || formRegisterPersonal.get('codePhone')?.touched)">
+          <span *ngIf="formRegisterPersonal.get('codePhone')?.errors?.['required']">El indicativo es obligatorio.</span>
+        </div>
       </div>
 
       <div class="col-12 md:col-6 lg:col-4">
@@ -193,8 +194,9 @@
             *ngIf="formRegisterPersonal.get('celphoneNumber')?.invalid && (formRegisterPersonal.get('celphoneNumber')?.dirty || formRegisterPersonal.get('celphoneNumber')?.touched)">
             <span *ngIf="formRegisterPersonal.get('celphoneNumber')?.errors?.['required']">El número de celular es
               obligatorio.</span>
-            <span *ngIf="formRegisterPersonal.get('celphoneNumber')?.errors?.['minlength']">El numero de celular debe tener al menos 8
-                caracteres.</span>
+            <span *ngIf="formRegisterPersonal.get('celphoneNumber')?.errors?.['minlength']">El numero de celular debe
+              tener al menos 8
+              caracteres.</span>
           </div>
         </div>
       </div>
@@ -217,8 +219,8 @@
 
       <div class="col-12 md:col-6 lg:col-5">
         <div class="inputbox">
-          <input type="text" formControlName="userName" placeholder="Escribe tu nombre de usuario" id="userName" minlength="3"
-            maxlength="60"
+          <input type="text" formControlName="userName" placeholder="Escribe tu nombre de usuario" id="userName"
+            minlength="3" maxlength="60"
             onkeypress="return ((event.charCode >= 48 && event.charCode <= 57) || (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))"
             [ngClass]="{ 'invalid-input': formRegisterPersonal.get('userName')?.invalid && formRegisterPersonal.get('userName')?.touched }">
           <label>Nombre de usuario</label>
@@ -234,27 +236,34 @@
 
       <div class="col-12 md:col-12 lg:col-3">
         <label class="p-label">Elige una contraseña</label>
-        <p-password formControlName="pass" id="password2"  placeholder="Contraseña"
-          [toggleMask]="true" weakLabel="Bajo" mediumLabel="Medio" strongLabel="Dificil">
+        <p-password formControlName="pass" id="password2" placeholder="Contraseña" [toggleMask]="true" weakLabel="Bajo"
+          mediumLabel="Medio" strongLabel="Dificil">
           <ng-template pTemplate="header">
             <h6>Elige una contraseña</h6>
-        </ng-template>
-        <ng-template pTemplate="footer">
+          </ng-template>
+          <ng-template pTemplate="footer">
             <p-divider></p-divider>
             <p class="mt-2">Sugerencias</p>
             <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
-                <li>Al menos una minúscula</li>
-                <li>Al menos una mayúscula</li>
-                <li>Al menos un número</li>
-                <li>Mínimo 8 caracteres</li>
+              <li>Al menos una minúscula</li>
+              <li>Al menos una mayúscula</li>
+              <li>Al menos un número</li>
+              <li>Mínimo 8 caracteres</li>
             </ul>
-        </ng-template>
+          </ng-template>
         </p-password>
         <div
           *ngIf="formRegisterPersonal.get('pass')?.invalid && (formRegisterPersonal.get('pass')?.dirty || formRegisterPersonal.get('pass')?.touched)">
           <span *ngIf="formRegisterPersonal.get('pass')?.errors?.['required']">La contraseña es obligatoria.</span>
         </div>
 
+      </div>
+
+      <div class="col-12 md:col-6 lg:col-5" *ngIf="promocod!='N/A'">
+        <div class="inputbox">
+          <header>Código promocional</header>
+          <input type="text" formControlName="promocode" placeholder="Escribe tu nombre de usuario" id="codPromo">
+        </div>
       </div>
 
       <div class="col-12 md:col-12 lg:col-12">
@@ -273,8 +282,9 @@
         <p-messages severity="info">
           <ng-template pTemplate>
             <h1 class="terminos-label">
-              ¡RECUERDA! La configuración de tu cuenta toma entre 5 a 15 minutos, luego deberás confirmar tu registro ingresando desde tu celular a tu<a class="button-link"
-                href="https://wa.link/salvadorsv"> Billetera Conversacional</a>
+              ¡RECUERDA! La configuración de tu cuenta toma entre 5 a 15 minutos, luego deberás confirmar tu registro
+              ingresando desde tu celular a tu<a class="button-link" href="https://wa.link/salvadorsv"> Billetera
+                Conversacional</a>
             </h1>
           </ng-template>
         </p-messages>

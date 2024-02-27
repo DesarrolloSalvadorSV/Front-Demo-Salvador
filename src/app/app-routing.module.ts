@@ -15,6 +15,7 @@ import { InicioComponent } from './shared/components/dashboard/inicio/inicio.com
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: 'login/:promocod', component: FormRegisterComponent },
   { path: 'login', component: FormRegisterComponent },
   {
     path: 'informacion-cliente',
@@ -22,6 +23,10 @@ const routes: Routes = [
     children: [
       {
         path: 'info-personal',
+        component: InfoPersonComponent
+      },
+      {
+        path: 'info-personal/:promocod',
         component: InfoPersonComponent
       },
       {

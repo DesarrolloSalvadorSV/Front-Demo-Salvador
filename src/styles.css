@@ -289,6 +289,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 }
 .p-panel .p-panel-header .p-panel-title {
   font-weight: 900;
+  font-size: 3rem;
 }
 
 .p-panel .p-panel-header {
