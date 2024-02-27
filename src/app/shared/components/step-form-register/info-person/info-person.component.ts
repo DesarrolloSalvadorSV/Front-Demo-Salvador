@@ -5,6 +5,7 @@ import { RegisterService } from 'src/app/services/apiRegister/register.service';
 import { MessageService, PrimeNGConfig } from 'primeng/api';
 import { ApiDropDownService } from 'src/app/services/apiDropDown/drop-down.service';
 import { ActivatedRoute } from '@angular/router';
+import { params } from 'src/environments/environment.variables';
 
 @Component({
   selector: 'app-info-person',
@@ -25,7 +26,7 @@ export class InfoPersonComponent implements OnInit {
   invalidDates: Date[];
   minDate: Date;
   country: any;
-  promocod: string;
+  params={} as params;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,9 +41,13 @@ export class InfoPersonComponent implements OnInit {
   }
 
   ngOnInit() {
+    debugger
     this.route.params.subscribe(params => {
-      this.promocod = params["promocod"] || 'N/A';
-      console.log('Valor de promocod:', this.promocod);
+      this.params.promocod = params["promocod"] || 'N/A';
+      if (this.params.promocod != 'N/A') {
+        this.params.company = params["company"] || 'N/A';
+      }
+      console.log('Valor de promocod:', this.params);
     });
     this.formPersonal();
     this.minMaxDate();
@@ -71,7 +76,7 @@ export class InfoPersonComponent implements OnInit {
       userName: ['', [Validators.required, Validators.minLength(3)]],
       pass: ['', [Validators.required, Validators.minLength(8)]],
       birtDate: ['', [Validators.required]],
-      promocode: [this.promocod],
+      promocode: [this.params.promocod],
     })
     const promocodeControl = this.formRegisterPersonal.get('promocode')?.disable();
   }
@@ -173,7 +178,8 @@ export class InfoPersonComponent implements OnInit {
         countryCode: this.codePrueba?.dial_code,
         phoneNumber: this.formRegisterPersonal.get('celphoneNumber')?.value,
         email: this.formRegisterPersonal.get('email')?.value,
-        promoCod: this.formRegisterPersonal.get('promocode')?.value
+        promoCod: this.params.promocod,
+        company: this.params.company
       }
 
 

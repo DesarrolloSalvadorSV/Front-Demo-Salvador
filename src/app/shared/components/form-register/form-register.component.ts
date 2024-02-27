@@ -5,6 +5,7 @@ import { MessageService } from 'primeng/api';
 import { LoginService } from 'src/app/services/apiLogin/login.service';
 import { LocalStorageService } from 'src/app/services/localStorage.service';
 import { ActivatedRoute } from '@angular/router';
+import { params } from 'src/environments/environment.variables';
 
 @Component({
   selector: 'app-form-register',
@@ -17,7 +18,7 @@ export class FormRegisterComponent {
   captcha: string;
   res: string;
   captchaResolved: boolean = false;
-  promocod:string;
+  promocod={} as params;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,7 +34,8 @@ export class FormRegisterComponent {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.promocod = params["promocod"] || 'N/A';
+      this.promocod.promocod = params["promocod"];
+      this.promocod.company = params["company"];
       console.log('Valor de promocod:', this.promocod);
     });
   }
@@ -48,7 +50,11 @@ export class FormRegisterComponent {
 
   register() {
     debugger
-    setTimeout(() => this.router.navigateByUrl(`/informacion-cliente/info-personal/${this.promocod}`), 500);
+    if (this.promocod && this.promocod.company) {
+      setTimeout(() => this.router.navigateByUrl(`/informacion-cliente/info-personal/${this.promocod.promocod}/${this.promocod.company}`), 500);
+    }else{
+      setTimeout(() => this.router.navigateByUrl(`/informacion-cliente/info-personal`), 500);
+    }
   }
 
   // Aquí se usa el método postData
@@ -82,3 +88,5 @@ export class FormRegisterComponent {
     });
   }
 }
+
+
