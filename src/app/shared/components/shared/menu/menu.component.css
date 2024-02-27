@@ -40,8 +40,9 @@ body {
 
 .wrapper .sidebar .profile h3 {
   color: #015b93;
-  line-height: 1em;
+  line-height: 1.1em;
   margin: 10px 0 5px;
+  font-size: 1.6rem;
 }
 
 .wrapper .sidebar .profile p {
