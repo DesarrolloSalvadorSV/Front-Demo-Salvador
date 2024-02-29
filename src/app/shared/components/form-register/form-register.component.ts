@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { LoginService } from 'src/app/services/apiLogin/login.service';
 import { LocalStorageService } from 'src/app/services/localStorage.service';
+import { ActivatedRoute } from '@angular/router';
+import { params } from 'src/environments/environment.variables';
 
 @Component({
   selector: 'app-form-register',
@@ -16,40 +18,50 @@ export class FormRegisterComponent {
   captcha: string;
   res: string;
   captchaResolved: boolean = false;
+  promocod={} as params;
 
   constructor(
     private formBuilder: FormBuilder,
     private messageService: MessageService,
     private loginService: LoginService,
     private localStorageService: LocalStorageService,
-    private router: Router,)
-    {
-      this.loginForm();
-      this.captcha = '';
-      this.res = '';
-    }
+    private router: Router,
+    private route: ActivatedRoute) {
+    this.loginForm();
+    this.captcha = '';
+    this.res = '';
+  }
 
-    ngOnInit() {
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.promocod.promocod = params["promocod"];
+      this.promocod.company = params["company"];
+      console.log('Valor de promocod:', this.promocod);
+    });
+  }
 
-    }
-
-  loginForm(){
+  loginForm() {
     this.formRegister = this.formBuilder.group({
-      nameUser: ['', [Validators.required,  Validators.minLength(3)]],
+      nameUser: ['', [Validators.required, Validators.minLength(3)]],
       pass: ['', [Validators.required]],
     })
   }
 
 
-  register(){
-    setTimeout(() => this.router.navigateByUrl('/informacion-cliente/info-personal'), 500);
+  register() {
+    debugger
+    if (this.promocod && this.promocod.company) {
+      setTimeout(() => this.router.navigateByUrl(`/informacion-cliente/info-personal/${this.promocod.promocod}/${this.promocod.company}`), 500);
+    }else{
+      setTimeout(() => this.router.navigateByUrl(`/informacion-cliente/info-personal`), 500);
+    }
   }
 
   // Aquí se usa el método postData
   sendDataRegister() {
 
-     const nameUser = this.formRegister.get('nameUser')?.value;
-     const pass =  this.formRegister.get('pass')?.value;
+    const nameUser = this.formRegister.get('nameUser')?.value;
+    const pass = this.formRegister.get('pass')?.value;
 
     this.loginService.getLogin(nameUser, pass).subscribe({
       next: response => {
@@ -69,9 +81,12 @@ export class FormRegisterComponent {
           severity: 'error',
           summary: 'Fallo en el sistema',
           detail: 'Error consultando datos de ingreso'
-      });
+        });
 
         this.formRegister.reset();
       }
-  });
-}}
+    });
+  }
+}
+
+

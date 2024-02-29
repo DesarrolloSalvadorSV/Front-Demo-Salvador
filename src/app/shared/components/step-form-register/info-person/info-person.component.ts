@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/apiRegister/register.service';
 import { MessageService, PrimeNGConfig } from 'primeng/api';
 import { ApiDropDownService } from 'src/app/services/apiDropDown/drop-down.service';
-
+import { ActivatedRoute } from '@angular/router';
+import { params } from 'src/environments/environment.variables';
 
 @Component({
   selector: 'app-info-person',
@@ -25,6 +26,7 @@ export class InfoPersonComponent implements OnInit {
   invalidDates: Date[];
   minDate: Date;
   country: any;
+  params={} as params;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,11 +35,20 @@ export class InfoPersonComponent implements OnInit {
     private config: PrimeNGConfig,
     private router: Router,
     private dropDownService: ApiDropDownService,
+    private route: ActivatedRoute,
   ) {
     this.infolist();
   }
 
   ngOnInit() {
+    debugger
+    this.route.params.subscribe(params => {
+      this.params.promocod = params["promocod"] || 'N/A';
+      if (this.params.promocod != 'N/A') {
+        this.params.company = params["company"] || 'N/A';
+      }
+      console.log('Valor de promocod:', this.params);
+    });
     this.formPersonal();
     this.minMaxDate();
     this.validFields();
@@ -65,7 +76,9 @@ export class InfoPersonComponent implements OnInit {
       userName: ['', [Validators.required, Validators.minLength(3)]],
       pass: ['', [Validators.required, Validators.minLength(8)]],
       birtDate: ['', [Validators.required]],
+      promocode: [this.params.promocod],
     })
+    const promocodeControl = this.formRegisterPersonal.get('promocode')?.disable();
   }
 
   //Metodo creado para cargar las banderas utilizadas en el indicativo telefonico
@@ -139,13 +152,13 @@ export class InfoPersonComponent implements OnInit {
 
   sendDataPersonal() {
 
-    if(this.formRegisterPersonal.invalid){
+    if (this.formRegisterPersonal.invalid) {
       this.messageService.add({
         severity: 'warn',
         summary: '¡Aviso importante!',
         detail: 'Recuerda que debes diligenciar los campos obligatorios y aceptar política de datos'
       });
-    }else if (this.formRegisterPersonal.valid) {
+    } else if (this.formRegisterPersonal.valid) {
 
       const dataToSend = {
         nameUser: this.formRegisterPersonal.get('nameUser')?.value,
@@ -165,6 +178,8 @@ export class InfoPersonComponent implements OnInit {
         countryCode: this.codePrueba?.dial_code,
         phoneNumber: this.formRegisterPersonal.get('celphoneNumber')?.value,
         email: this.formRegisterPersonal.get('email')?.value,
+        promoCod: this.params.promocod,
+        company: this.params.company
       }
 
 
@@ -200,7 +215,7 @@ export class InfoPersonComponent implements OnInit {
     return `${year}-${month}-${day}`;
   }
 
-  validFields(){
+  validFields() {
     this.formRegisterPersonal.markAllAsTouched();
   }
 }
