@@ -11,10 +11,12 @@ import { DetailWithdrawalsComponent } from './shared/components/dashboard/detail
 import { TransactionsReceivedComponent } from './shared/components/dashboard/transactions-received/transactions-received.component';
 import { TransactionsSentComponent } from './shared/components/dashboard/transactions-sent/transactions-sent.component';
 import { InicioComponent } from './shared/components/dashboard/inicio/inicio.component';
+import { GenerateCodePromoComponent } from './shared/components/generate-code-promo/generate-code-promo.component';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: 'generador', component: GenerateCodePromoComponent },
   { path: 'login/:promocod/:company', component: FormRegisterComponent },
   { path: 'login', component: FormRegisterComponent },
   {

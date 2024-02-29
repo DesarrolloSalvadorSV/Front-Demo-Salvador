@@ -57,6 +57,7 @@ import { TransactionsReceivedComponent } from './components/dashboard/transactio
 import { TransactionsSentComponent } from './components/dashboard/transactions-sent/transactions-sent.component';
 import { InicioComponent } from './components/dashboard/inicio/inicio.component';
 import { PanelModule } from 'primeng/panel';
+import { GenerateCodePromoComponent } from './components/generate-code-promo/generate-code-promo.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { PanelModule } from 'primeng/panel';
     DetailWithdrawalsComponent,
     TransactionsReceivedComponent,
     TransactionsSentComponent,
-    InicioComponent
+    InicioComponent,
+    GenerateCodePromoComponent
   ],
   imports: [
     CommonModule,
