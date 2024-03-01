@@ -45,6 +45,8 @@ import { DepositosMockService } from './services/DepositosMock.service';
 import { TagModule } from 'primeng/tag';
 import { PasswordModule } from 'primeng/password';
 import { PanelModule } from 'primeng/panel';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,7 +90,9 @@ import { PanelModule } from 'primeng/panel';
     TableModule,
     TagModule,
     PasswordModule,
-    PanelModule
+    PanelModule,
+    InputTextareaModule,
+    ClipboardModule
    // ...PRIMENG_MODULES
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

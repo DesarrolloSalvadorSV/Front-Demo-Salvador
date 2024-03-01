@@ -58,6 +58,8 @@ import { TransactionsSentComponent } from './components/dashboard/transactions-s
 import { InicioComponent } from './components/dashboard/inicio/inicio.component';
 import { PanelModule } from 'primeng/panel';
 import { GenerateCodePromoComponent } from './components/generate-code-promo/generate-code-promo.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @NgModule({
   declarations: [
@@ -113,7 +115,9 @@ import { GenerateCodePromoComponent } from './components/generate-code-promo/gen
     TableModule,
     TagModule,
     PasswordModule,
-    PanelModule
+    PanelModule,
+    InputTextareaModule,
+    ClipboardModule
   ],
   exports: [
     FormRegisterComponent,
