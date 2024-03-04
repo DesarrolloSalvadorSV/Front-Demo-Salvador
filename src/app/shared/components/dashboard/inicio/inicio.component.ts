@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,12 @@ import { Component } from '@angular/core';
 })
 export class InicioComponent {
 
-  nameUser =  localStorage.getItem('name');
-  constructor() {
+
+  constructor(private route : Router) {
 
    }
 
+   billetera(){
+    this.route.navigate(['sv/billetera']);
+   }
 }

@@ -21,9 +21,11 @@ export class MenuComponent {
 
   }
 
-
-
   ngOnInit() {
+    this.menu();
+  }
+
+  menu(){
     this.items = [
       {
         label: 'Explorar',
@@ -31,27 +33,22 @@ export class MenuComponent {
           {
             label: 'Inicio',
             icon: 'pi pi-home',
-            routerLink: this.navegacionRutas(),
+            routerLink: 'inicio'
           },
         ],
       },
       {
         label: 'Mi Billetera',
         items: [
-/*           {
-            label: 'Ir a Billetera',
-            icon: 'pi pi-wallet',
-            url: 'http://angular.io',
-          }, */
           {
             label: 'Uso de Billetera',
             icon: 'pi pi-wallet',
-            url: 'http://angular.io',
+            routerLink: 'billetera',
           },
           {
             label: 'Novedades',
             icon: 'pi pi-megaphone',
-            url: 'http://angular.io',
+            routerLink: 'novedades',
           },
         ],
       },
@@ -61,31 +58,23 @@ export class MenuComponent {
           {
             label: 'Enviadas',
             icon: 'pi pi-send',
-            command: () => {
-              // this.update();
-            },
+            routerLink: 'transaciones-enviadas'
           },
           {
             label: 'Depositos',
             icon: 'pi pi-money-bill',
-            command: () => {
-              //  this.delete();
-            },
+            routerLink: 'detalle-deposito'
           },
           {
             label: 'Recibidas',
             icon: 'pi pi-arrow-left',
-            command: () => {
-              //  this.delete();
-            },
+            routerLink: 'transaciones-recibidas'
           },
 
           {
             label: 'Retiros',
             icon: 'pi pi-arrow-right',
-            command: () => {
-              //this.delete();
-            },
+            routerLink: 'detalle-retiros'
           },
         ],
       },
@@ -95,28 +84,32 @@ export class MenuComponent {
           {
             label: 'Verificar cuenta ',
             icon: 'pi pi-check ',
-            url: 'http://angular.io',
+            url: 'https://clientes.salvadorsv.com/informacion-cliente/verificacion',
           },
           {
             label: 'Centro de ayuda',
             icon: 'pi pi-question',
-            url: 'http://angular.io',
+            url: 'https://salvadorsv.com/',
           },
           {
             label: 'Salir',
             icon: 'pi pi-sign-out',
-            url: 'http://angular.io',
+            command: () => {
+                this.logout();
+              },
           },
         ],
       }
     ];
-
   }
-  navegacionRutas(){
-    this.router.navigate(['/transaciones-recibidas']);
+
+  logout(){
+    localStorage.removeItem('userApiKey');
+    this.router.navigateByUrl('/login');
   }
 
   efectos() {
     this.isClassEnabled = !this.isClassEnabled;
   }
+
 }

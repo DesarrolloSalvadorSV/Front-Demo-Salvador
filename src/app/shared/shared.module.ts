@@ -60,6 +60,8 @@ import { PanelModule } from 'primeng/panel';
 import { GenerateCodePromoComponent } from './components/generate-code-promo/generate-code-promo.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { WalletComponent } from './components/dashboard/wallet/wallet.component';
+import { NoveltiesComponent } from './components/dashboard/novelties/novelties.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     TransactionsReceivedComponent,
     TransactionsSentComponent,
     InicioComponent,
-    GenerateCodePromoComponent
+    GenerateCodePromoComponent,
+    WalletComponent,
+    NoveltiesComponent
   ],
   imports: [
     CommonModule,

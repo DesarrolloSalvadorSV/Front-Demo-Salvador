@@ -12,6 +12,8 @@ import { TransactionsReceivedComponent } from './shared/components/dashboard/tra
 import { TransactionsSentComponent } from './shared/components/dashboard/transactions-sent/transactions-sent.component';
 import { InicioComponent } from './shared/components/dashboard/inicio/inicio.component';
 import { GenerateCodePromoComponent } from './shared/components/generate-code-promo/generate-code-promo.component';
+import { WalletComponent } from './shared/components/dashboard/wallet/wallet.component';
+import { NoveltiesComponent } from './shared/components/dashboard/novelties/novelties.component';
 
 
 const routes: Routes = [
@@ -62,6 +64,14 @@ const routes: Routes = [
      {
       path: 'inicio',
       component: InicioComponent
+     },
+     {
+      path: 'billetera',
+      component: WalletComponent
+     },
+     {
+      path: 'novedades',
+      component: NoveltiesComponent
      },
 
     ]
