@@ -89,7 +89,7 @@ export class MenuComponent {
           {
             label: 'Centro de ayuda',
             icon: 'pi pi-question',
-            url: 'https://salvadorsv.com/',
+            url: 'https://salvadorsv.com/centrodeayuda/',
           },
           {
             label: 'Salir',
