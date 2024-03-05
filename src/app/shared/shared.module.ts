@@ -62,6 +62,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { WalletComponent } from './components/dashboard/wallet/wallet.component';
 import { NoveltiesComponent } from './components/dashboard/novelties/novelties.component';
+import { CarouselModule } from 'primeng/carousel';
+import { GalleriaModule } from 'primeng/galleria';
 
 @NgModule({
   declarations: [
@@ -121,7 +123,9 @@ import { NoveltiesComponent } from './components/dashboard/novelties/novelties.c
     PasswordModule,
     PanelModule,
     InputTextareaModule,
-    ClipboardModule
+    ClipboardModule,
+    CarouselModule,
+    GalleriaModule
   ],
   exports: [
     FormRegisterComponent,

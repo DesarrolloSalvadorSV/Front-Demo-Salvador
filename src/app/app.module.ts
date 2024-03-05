@@ -47,6 +47,9 @@ import { PasswordModule } from 'primeng/password';
 import { PanelModule } from 'primeng/panel';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { CarouselModule } from 'primeng/carousel';
+import { GalleriaModule } from 'primeng/galleria';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,7 +95,9 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     PasswordModule,
     PanelModule,
     InputTextareaModule,
-    ClipboardModule
+    ClipboardModule,
+    CarouselModule,
+    GalleriaModule
    // ...PRIMENG_MODULES
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
