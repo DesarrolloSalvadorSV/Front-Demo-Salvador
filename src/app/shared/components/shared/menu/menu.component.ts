@@ -92,6 +92,11 @@ export class MenuComponent {
             url: 'https://salvadorsv.com/centrodeayuda/',
           },
           {
+            label: 'Ir a la pagina web',
+            icon: 'pi pi-globe',
+            url: 'https://salvadorsv.com/',
+          },
+          {
             label: 'Salir',
             icon: 'pi pi-sign-out',
             command: () => {
