@@ -186,9 +186,10 @@
       <div class="col-12 md:col-6 lg:col-4">
         <div class="inputbox">
           <input type="text" formControlName="celphoneNumber" placeholder="Digita tu número de celular" id="cell"
-            onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" minlength="8" maxlength="15"
-            [ngClass]="{ 'invalid-input': formRegisterPersonal.get('celphoneNumber')?.invalid && formRegisterPersonal.get('celphoneNumber')?.touched }">
-          <label>Número Celular</label>
+          onkeypress="return (event.charCode >= 48 && event.charCode <= 57)"
+          minlength="8" maxlength="15"
+          [ngClass]="{ 'invalid-input': formRegisterPersonal.get('celphoneNumber')?.invalid && formRegisterPersonal.get('celphoneNumber')?.touched }">
+          <label>Número de Whatsapp</label>
 
           <div
             *ngIf="formRegisterPersonal.get('celphoneNumber')?.invalid && (formRegisterPersonal.get('celphoneNumber')?.dirty || formRegisterPersonal.get('celphoneNumber')?.touched)">

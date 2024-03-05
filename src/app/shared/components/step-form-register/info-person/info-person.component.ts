@@ -41,7 +41,6 @@ export class InfoPersonComponent implements OnInit {
   }
 
   ngOnInit() {
-    debugger
     this.route.params.subscribe(params => {
       this.params.promocod = params["promocod"] || 'N/A';
       if (this.params.promocod != 'N/A') {
