@@ -52,7 +52,7 @@ export class NoveltiesComponent {
 }
 
 goToNews(){
-  window.open('https://youtu.be/zVR_271ZHiQ');
+  window.open('https://youtu.be/zVR_271ZHiQ', '_blank');
 }
 
   onUrl(url: string) {
