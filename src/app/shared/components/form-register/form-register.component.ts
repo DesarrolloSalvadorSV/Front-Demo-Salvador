@@ -74,7 +74,7 @@ export class FormRegisterComponent {
         this.localStorageService.setItem('userApiKey', response.userApiKey);
 
         this.formRegister.reset();
-        setTimeout(() => this.router.navigateByUrl('/sv'), 500);
+        setTimeout(() => this.router.navigateByUrl('/sv/inicio'), 500);
 
       }, error: error => {
         this.messageService.add({
