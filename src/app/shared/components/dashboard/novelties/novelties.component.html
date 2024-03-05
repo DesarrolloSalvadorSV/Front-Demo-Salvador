@@ -5,7 +5,31 @@
       <div class="col-12">
         <img src="../../../../../assets/layout/images/dashboard/BANNERNOVEDAD.jpg"
           style="max-width: 100%; height: auto;">
+
+          <!-- <p-carousel [value]="products" [numVisible]="2" [numScroll]="3" [circular]="true"
+            [responsiveOptions]="responsiveOptions" autoPlayInterval="2000">
+            <ng-template let-product pTemplate="item">
+              <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+
+                <div class="mb-3">
+                  <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}" [alt]="product.name"
+                    class="w-12 shadow-2" />
+                </div>
+
+                <div>
+                  <div class="car-buttons mt-5">
+                    <div class="btn-footer">
+                      <p-button label="Ver Cómo" icon="pi pi-check" styleClass="p-button-sm" (click)="onUrl(product.url)">
+                      </p-button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </ng-template>
+          </p-carousel> -->
       </div>
+
       <div class="btn-footer">
         <p-button label="Ver Cómo" icon="pi pi-check" (onClick)="goToNews()"></p-button>
       </div>
