@@ -49,7 +49,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { CarouselModule } from 'primeng/carousel';
 import { GalleriaModule } from 'primeng/galleria';
-
+import { ImageModule } from 'primeng/image';
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,7 +97,8 @@ import { GalleriaModule } from 'primeng/galleria';
     InputTextareaModule,
     ClipboardModule,
     CarouselModule,
-    GalleriaModule
+    GalleriaModule,
+    ImageModule
    // ...PRIMENG_MODULES
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

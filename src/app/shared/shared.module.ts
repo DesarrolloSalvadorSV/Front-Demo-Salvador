@@ -64,6 +64,7 @@ import { WalletComponent } from './components/dashboard/wallet/wallet.component'
 import { NoveltiesComponent } from './components/dashboard/novelties/novelties.component';
 import { CarouselModule } from 'primeng/carousel';
 import { GalleriaModule } from 'primeng/galleria';
+import { ImageModule } from 'primeng/image';
 
 @NgModule({
   declarations: [
@@ -125,7 +126,8 @@ import { GalleriaModule } from 'primeng/galleria';
     InputTextareaModule,
     ClipboardModule,
     CarouselModule,
-    GalleriaModule
+    GalleriaModule,
+    ImageModule
   ],
   exports: [
     FormRegisterComponent,
